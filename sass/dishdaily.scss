@@ -1,5 +1,5 @@
 /*
-Theme Name: The Dish Daily
+Theme Name: The Dish Daily (Aries)
 Theme URI: http://thedishdaily.com/
 Description: Theme for the Dish Daily
 Author: Roger Chen
@@ -12,3 +12,40 @@ License URI:
 
 General comments (optional).
 */
+
+$header-background: #56A6DB;
+$header-navbar-text: #F7F7F7;
+$header-navbar-hover: #5BB4F0;
+
+html {
+	font-weight: 300;
+}
+
+.aries-navbar {
+	background-color: $header-background;
+	border-bottom: none;
+	height: 54px;
+	.aries-navbar-logo {
+		display: inline-block;
+		img {
+			height: 54px;
+		}
+	}
+	.aries-navbar-items {
+		display: inline-block;
+		ul {
+			li {
+				color: $header-navbar-text;
+				padding: 17px 5px;
+				display: inline-block;
+				&:hover {
+					background-color: $header-navbar-hover;
+				}
+			}
+		}
+	}
+}
+
+body {
+	margin-top: 30px;
+}

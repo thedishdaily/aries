@@ -12,6 +12,10 @@ License URI:
 
 General comments (optional).
 */
+.container {
+  max-width: none !important;
+  width: 970px; }
+
 html {
   font-weight: 300; }
 
@@ -25,12 +29,50 @@ html {
       height: 54px; }
   .aries-navbar .aries-navbar-items {
     display: inline-block; }
-    .aries-navbar .aries-navbar-items ul li {
-      color: #f7f7f7;
-      padding: 17px 5px;
-      display: inline-block; }
-      .aries-navbar .aries-navbar-items ul li:hover {
-        background-color: #5bb4f0; }
+    .aries-navbar .aries-navbar-items ul {
+      margin-left: -20px; }
+      .aries-navbar .aries-navbar-items ul li {
+        color: #f7f7f7;
+        padding: 17px 10px;
+        display: inline-block; }
+        .aries-navbar .aries-navbar-items ul li:hover {
+          background-color: #5bb4f0; }
 
-body {
-  margin-top: 30px; }
+.aries-body {
+  margin-top: 60px; }
+
+.aries-features .aries-main {
+  background-color: blue;
+  height: 350px; }
+.aries-features .aries-sidebar {
+  height: 350px; }
+  .aries-features .aries-sidebar .aries-sidebar-item .aries-sidebar-item-title {
+    padding: 2px 5px;
+    width: 231px;
+    display: inline-block; }
+  .aries-features .aries-sidebar .aries-sidebar-item img {
+    vertical-align: top;
+    display: inline-block; }
+  .aries-features .aries-sidebar .aries-sidebar-item:not(:first-child) {
+    margin-top: 10px; }
+
+.aries-trending {
+  margin-top: 10px;
+  color: white;
+  padding: 3px 5px;
+  text-transform: uppercase;
+  background-color: #d35400; }
+  .aries-trending ul {
+    margin: 0px;
+    margin-left: -35px;
+    display: inline-block; }
+    .aries-trending ul li {
+      display: inline-block; }
+    .aries-trending ul li:not(:first-child) {
+      margin-left: 7px; }
+
+.aries-secondaryfeatures {
+  margin-top: 8px; }
+  .aries-secondaryfeatures .aries-secondaryfeature {
+    background-color: green;
+    height: 40px; }

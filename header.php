@@ -14,12 +14,9 @@
 </head>
 <header class="navbar navbar-inverse navbar-fixed-top aries-navbar">
     <div class="container">
-        <div class="aries-navbar-logo"><img src="<? bloginfo('template_directory');?>/images/logo.png" /></div>
+        <div class="aries-navbar-logo"><a href="http://66.175.223.251/"><img src="<? bloginfo('template_directory');?>/images/logo.png" /></a></div>
         <div class="aries-navbar-items">
-            <ul>
-                <li>Item One</li>
-                <li>Item Two</li>
-            </ul>
+            <?php wp_nav_menu(); ?>
         </div>
     </div>
 </header>

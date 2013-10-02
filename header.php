@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <title><?php wp_title(); ?></title>
+    <title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
     <meta name="description" content="<?php bloginfo( 'description' ); ?>">
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="stylesheet" href="<? bloginfo('template_directory');?>/css/bootstrap.min.css" />        

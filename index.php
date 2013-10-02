@@ -5,7 +5,7 @@
 			<div class="row">
 				<div class="col-xs-8">
 					<? $post = get_post(get_option('main_feature_id')); ?>
-					<a href="<? echo $post->post_url; ?>">
+					<a href="<? echo get_permalink($post->ID); ?>">
 					<div class="aries-main">
 						<? echo get_the_post_thumbnail($post->ID); ?>
 						<div class="aries-main-featured">FEATURED</div>
@@ -15,22 +15,17 @@
 				</div>
 				<div class="col-xs-4">
 					<div class="aries-sidebar">
+						<?
+						$featuredargs = array( 'posts_per_page' => 5, 'order'=> 'DESC', 'orderby' => 'date' );
+						$featuredlist = get_posts( $featuredargs );
+						foreach ($featuredlist as $featured) { ?>
 						<div class="aries-sidebar-item">
-							<div class="aries-sidebar-item-title">Draper Business Plan Competition Comes to Smith</div>
-							<img src="http://placehold.it/80x80" />
+							<a href="<? echo get_permalink($post->ID); ?>">
+							<div class="aries-sidebar-item-title"><? echo $featured->post_title; ?></div>
+							<? echo get_the_post_thumbnail($featured->ID); ?>
+							</a>
 						</div>
-						<div class="aries-sidebar-item">
-							<div class="aries-sidebar-item-title">Draper Business Plan Competition Comes to Smith</div>
-							<img src="http://placehold.it/80x80" />
-						</div>
-						<div class="aries-sidebar-item">
-							<div class="aries-sidebar-item-title">Draper Business Plan Competition Comes to Smith</div>
-							<img src="http://placehold.it/80x80" />
-						</div>
-						<div class="aries-sidebar-item">
-							<div class="aries-sidebar-item-title">Draper Business Plan Competition Comes to Smith</div>
-							<img src="http://placehold.it/80x80" />
-						</div>
+						<? } ?>
 					</div>
 				</div>
 			</div>

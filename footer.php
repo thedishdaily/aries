@@ -4,15 +4,18 @@
 	<div class="row">
 		<div class="col-xs-4">
 			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/about-the-dish-daily/">About</a></li>
+				<?php wp_nav_menu( array( 'menu' => 'Footer Left' ) ); ?>
 			</ul>
 		</div>
 		<div class="col-xs-4">
-			Second Column
+			<ul>
+				<?php wp_nav_menu( array( 'menu' => 'Footer Center' ) ); ?>
+			</ul>
 		</div>
 		<div class="col-xs-4">
-			Third Column
+			<ul>
+				<?php wp_nav_menu( array( 'menu' => 'Footer Right' ) ); ?>
+			</ul>
 		</div>
 	</div>
 </div>

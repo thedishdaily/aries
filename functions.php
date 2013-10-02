@@ -1,6 +1,7 @@
 <?
 
 add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-formats' );
 add_theme_support( 'menus' );
 add_filter('show_admin_bar', '__return_false');
 

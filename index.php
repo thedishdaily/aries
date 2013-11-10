@@ -20,9 +20,14 @@
 						$featuredlist = get_posts( $featuredargs );
 						foreach ($featuredlist as $featured) { ?>
 						<div class="aries-sidebar-item">
-							<a href="<? echo get_permalink($post->ID); ?>">
+							<a href="<? echo get_permalink($featured->ID); ?>">
 							<div class="aries-sidebar-item-title"><? echo $featured->post_title; ?></div>
-							<? echo get_the_post_thumbnail($featured->ID); ?>
+							<?php
+							$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($featured->ID), 'thumbnail' );
+							$url = $thumb['0'];
+							?>
+							<div class="aries-sidebar-item-thumbnail" style="background-image: url('<? echo $url; ?>');">
+							</div>
 							</a>
 						</div>
 						<? } ?>
@@ -44,13 +49,18 @@
 			<a href="<?php the_permalink() ?>" rel="bookmark">
 			<div class="aries-secondary-feature">
 				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-				<div class="aries-secondary-feature-image"><img src="<? echo $image[0]; ?>" /></div>
 				<div class="aries-secondary-feature-title"><?php the_title(); ?></div>
+				<div class="aries-secondary-feature-image"><img src="<? echo $image[0]; ?>" /></div>
+				<div class="aries-secondary-feature-subtitle"><?php the_subtitle(); ?></div>
 			</div>
 			</a>
-			<?php endwhile; else: ?>
+			<?php endwhile; ?>
+			<? else: ?>
 			<?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
 		</div>
+		<? if (have_posts()) { ?>
+			<div class="aries-secondary-showmore"><a href="#">Show more stories</a></div>
+		<? } ?>
 	</div>
 </div>
 <script src="<? bloginfo('template_directory');?>/js/masonry.min.js"></script>

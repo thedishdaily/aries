@@ -10,6 +10,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 					<? echo get_avatar($curauth->ID, 300); ?>
 					<div class="aries-author-info-firstname"><? echo $curauth->first_name;?></div>
 					<div class="aries-author-info-lastname"><? echo $curauth->last_name; ?></div>
+					<div class="aries-author-info-biography"><? echo get_the_author_meta('description', $curauth->id); ?></div>
 				</div>
 			</div>
 			<div class="col-xs-9">

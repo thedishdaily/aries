@@ -3,11 +3,11 @@
 		<div class="row">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div class="col-xs-2">
-				<div class="aries-post-authorbar aries-radar-authorbar">
+				<!-- <div class="aries-post-authorbar aries-radar-authorbar">
 					<div class="aries-post-avatar"><?php echo get_avatar($post->post_author, 110); ?></div>
 					<div class="aries-post-author"><?php the_author_posts_link() ?></div>
 					<div class="aries-post-publishdate"><? the_time('F jS, Y'); ?></div>
-				</div>
+				</div> -->
 			</div>
 			<div class="col-xs-8">
 				<div class="aries-post aries-radar-post <?php if(is_home() && $post==$posts[0] && !is_paged()) echo ' firstpost';?>">
@@ -20,9 +20,11 @@
 				</div> <!-- aries-post -->
 			</div>
 			<div class="col-xs-2">
+				<!--
 				<div class="aries-post-relatedbar aries-radar-relatedbar">
 					Related stories
 				</div>
+				-->
 			</div>
 			<?php endwhile; else: ?>
 			<p> <?php _e('Sorry, no posts matched your criteria.'); ?> </p>

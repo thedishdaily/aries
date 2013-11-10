@@ -19,7 +19,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 				<div class="aries-author-story">
 				<a href="<?php the_permalink() ?>" rel="bookmark">
 					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-					<div class="aries-author-story-image"><img src="<? echo $image[0]; ?>" /></div>
+					<div class="aries-author-story-image" style="background-image: url('<? echo $image[0]; ?>');"></div>
 					<div class="aries-author-story-title"><?php the_title(); ?></div>
 				</div>
 				</a>

@@ -146,17 +146,20 @@ img.aligncenter {
     position: absolute;
     width: 24%;
     margin-bottom: 20px;
-    height: 330px; }
-    .aries-secondary-features .aries-secondary-feature .aries-secondary-feature-image img {
+    height: 340px; }
+    .aries-secondary-features .aries-secondary-feature .aries-secondary-feature-image {
+      height: 180px;
       width: 100%;
-      height: 180px; }
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover; }
     .aries-secondary-features .aries-secondary-feature .aries-secondary-feature-title {
       padding: 2px;
-      margin: 5px 0px 5px 0px;
-      font-size: 1.25em; }
+      margin: 5px 0px 10px 0px;
+      font-size: 1.4em; }
     .aries-secondary-features .aries-secondary-feature .aries-secondary-feature-subtitle {
       margin-top: 10px;
-      margin-bottom: 20px; }
+      font-size: 1.1em; }
     .aries-secondary-features .aries-secondary-feature .aries-secondary-feature-author {
       padding: 2px 5px; }
 
@@ -183,6 +186,12 @@ img.aligncenter {
   line-height: 1.8em; }
   .aries-post .aries-post-content p {
     margin-bottom: 18px; }
+.aries-post .aries-post-readmore {
+  margin-bottom: 20px; }
+  .aries-post .aries-post-readmore .aries-post-readmore-title {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    padding-bottom: 10px; }
 .aries-post .aries-post-image {
   margin-bottom: 10px; }
   .aries-post .aries-post-image img {
@@ -201,11 +210,14 @@ img.aligncenter {
     padding: 2px 20px; }
   .aries-radar-post .aries-post-content img {
     margin: 5px 0px; }
-  .aries-radar-post blockquote {
+  .aries-radar-post .aries-post-content blockquote {
     font-size: 1.8em;
     font-weight: 300;
     border-left: 5px solid #D9740F;
     margin-left: 15px; }
+    .aries-radar-post .aries-post-content blockquote p {
+      padding-bottom: 5px;
+      margin-bottom: 5px; }
 
 .aries-post-authorbar {
   position: fixed;
@@ -221,8 +233,31 @@ img.aligncenter {
 
 .aries-post-relatedbar {
   position: fixed;
-  width: 140px;
-  margin-left: 15px; }
+  width: 160px;
+  margin-left: 20px; }
+
+.aries-post-readmore-item {
+  display: inline-block;
+  width: 250px;
+  vertical-align: top;
+  margin-right: 11px; }
+  .aries-post-readmore-item .aries-post-readmore-item-thumbnail {
+    height: 100px;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .aries-post-readmore-item .aries-post-readmore-item-title {
+    margin: 5px 0px; }
+
+.aries-relatedbar-item {
+  margin-bottom: 20px; }
+  .aries-relatedbar-item .aries-relatedbar-item-thumbnail {
+    height: 90px;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; }
 
 .aries-radar-relatedbar {
   background-color: rgba(255, 255, 255, 0.85);
@@ -246,10 +281,12 @@ img.aligncenter {
   .aries-author-stories .aries-author-story a {
     text-decoration: none; }
   .aries-author-stories .aries-author-story .aries-author-story-image {
+    height: 70px;
+    width: 100px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: inline-block; }
-    .aries-author-stories .aries-author-story .aries-author-story-image img {
-      width: 100px;
-      margin-top: 5px; }
   .aries-author-stories .aries-author-story .aries-author-story-title {
     width: 700px;
     padding-left: 10px;

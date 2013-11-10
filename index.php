@@ -46,14 +46,16 @@
 		</div>
 		<div class="aries-secondary-features">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<a href="<?php the_permalink() ?>" rel="bookmark">
 			<div class="aries-secondary-feature">
 				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-				<div class="aries-secondary-feature-title"><?php the_title(); ?></div>
-				<div class="aries-secondary-feature-image"><img src="<? echo $image[0]; ?>" /></div>
+				<a href="<?php the_permalink() ?>" rel="bookmark"><div class="aries-secondary-feature-title"><?php the_title(); ?></div></a>
+				<? if ($image[0] == null) { ?>
+					<div class="aries-secondary-feature-image" style="background-image: url('<? bloginfo('template_directory');?>/images/placeholder.png');"></div>
+				<? } else { ?>
+					<div class="aries-secondary-feature-image" style="background-image: url('<? echo $image[0]; ?>');"></div>
+				<? } ?>
 				<div class="aries-secondary-feature-subtitle"><?php the_subtitle(); ?></div>
 			</div>
-			</a>
 			<?php endwhile; ?>
 			<? else: ?>
 			<?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>

@@ -18,12 +18,53 @@
 					<div class="aries-post-image"><img src="<? echo $image[0]; ?>" /></div>
 					<?php endif; ?>
 					<div class="aries-post-content"><?php the_content(__('Read more'));?></div>
+					<div class="aries-post-readmore">
+					<div class="aries-post-readmore-title">More from the Dish Daily</div>
+					<?
+						$featuredargs = array( 'posts_per_page' => 3, 'order'=> 'DESC', 'orderby' => 'rand' );
+						$featuredlist = get_posts( $featuredargs );
+						foreach ($featuredlist as $featured) { ?>
+						<div class="aries-post-readmore-item">
+							<a href="<? echo get_permalink($featured->ID); ?>">
+							<?php
+							$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($featured->ID), 'thumbnail' );
+							$url = $thumb['0'];
+							?>
+							<? if ($url == null) { ?>
+								<div class="aries-post-readmore-item-thumbnail" style="background-image: url('<? bloginfo('template_directory');?>/images/placeholder.png');"></div>
+							<? } else { ?> 
+								<div class="aries-post-readmore-item-thumbnail" style="background-image: url('<? echo $url; ?>');"></div>
+							<? } ?>
+							<div class="aries-post-readmore-item-title"><? echo $featured->post_title; ?></div>
+							</a>
+						</div>
+					<? } ?>	
+					</div>
+					<div class="aries-comments">
+					<?php comments_template(); ?>
+					</div>
 				</div> <!-- aries-post -->
 			</div>
 			<div class="col-xs-2">
+				<!--
 				<div class="aries-post-relatedbar">
-					Related stories
+					<?
+						$featuredargs = array( 'posts_per_page' => 3, 'order'=> 'DESC', 'orderby' => 'date' );
+						$featuredlist = get_posts( $featuredargs );
+						foreach ($featuredlist as $featured) { ?>
+						<div class="aries-relatedbar-item">
+							<a href="<? echo get_permalink($featured->ID); ?>">
+							<?php
+							$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($featured->ID), 'thumbnail' );
+							$url = $thumb['0'];
+							?>
+							<div class="aries-relatedbar-item-thumbnail" style="background-image: url('<? echo $url; ?>');"></div>
+							<div class="aries-relatedbar-item-title"><? echo $featured->post_title; ?></div>
+							</a>
+						</div>
+					<? } ?>
 				</div>
+				-->
 			</div>
 			<?php endwhile; else: ?>
 			<p> <?php _e('Sorry, no posts matched your criteria.'); ?> </p>

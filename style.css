@@ -70,6 +70,15 @@ img.aligncenter {
           text-decoration: none; }
         .aries-navbar .aries-navbar-items ul li:hover {
           background-color: #5bb4f0; }
+  .aries-navbar .aries-navbar-search {
+    display: inline-block;
+    float: right;
+    height: 54px;
+    margin-top: 14px; }
+    .aries-navbar .aries-navbar-search input[type="text"] {
+      padding: 4px 7px;
+      font-size: 16px;
+      border: none; }
 
 .aries-body {
   margin-top: 70px;
@@ -130,6 +139,8 @@ img.aligncenter {
   padding: 3px 5px;
   text-transform: uppercase;
   background-color: #d35400; }
+  .aries-trending a {
+    color: white; }
   .aries-trending ul {
     margin: 0px;
     margin-left: -35px;
@@ -264,30 +275,32 @@ img.aligncenter {
   padding: 15px;
   width: 150px; }
 
-.aries-author-info img {
+.aries-listing-info img {
   width: 280px;
   height: 280px; }
-.aries-author-info .aries-author-info-firstname {
+.aries-listing-info .aries-listing-info-firstname {
   margin-top: 20px;
   font-size: 2em; }
-.aries-author-info .aries-author-info-lastname {
+.aries-listing-info .aries-listing-info-lastname {
   font-weight: 500;
   margin-top: -15px;
   font-size: 3.2em; }
+.aries-listing-info .aries-listing-title {
+  font-size: 2em; }
 
-.aries-author-stories .aries-author-story {
+.aries-listing-stories .aries-listing-story {
   height: 80px;
   margin-bottom: 10px; }
-  .aries-author-stories .aries-author-story a {
+  .aries-listing-stories .aries-listing-story a {
     text-decoration: none; }
-  .aries-author-stories .aries-author-story .aries-author-story-image {
+  .aries-listing-stories .aries-listing-story .aries-listing-story-image {
     height: 70px;
     width: 100px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     display: inline-block; }
-  .aries-author-stories .aries-author-story .aries-author-story-title {
+  .aries-listing-stories .aries-listing-story .aries-listing-story-title {
     width: 700px;
     padding-left: 10px;
     font-size: 1.5em;

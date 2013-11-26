@@ -18,6 +18,11 @@
         <div class="aries-navbar-items">
             <?php wp_nav_menu(); ?>
         </div>
+        <div class="aries-navbar-search">
+            <form role="search" method="get" id="searchform" action="<? echo home_url(); ?>">
+                <input type="text" name="s" />
+            </form>
+        </div>
     </div>
 </header>
 <body>

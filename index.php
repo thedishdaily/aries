@@ -38,10 +38,11 @@
 		<div class="aries-trending">
 			Trending: 
 			<ul>
-				<li>StartX</li>
-				<li>TEDxStanford</li>
-				<li>Google Glass</li>
-				<li>BASES</li>
+				<?php 
+				$tags = wp_tag_cloud('smallest=10&largest=10&format=array&number=8&orderby=count'); 
+				foreach ($tags as $tag) { ?>
+				<li><? echo $tag; ?></li>
+				<? } ?>
 			</ul>
 		</div>
 		<div class="aries-secondary-features">

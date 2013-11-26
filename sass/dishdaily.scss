@@ -67,6 +67,19 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 			}
 		}
 	}
+	.aries-navbar-search {
+		display: inline-block;
+		float: right;
+		height: 54px;
+		margin-top: 14px;
+		input {
+			&[type="text"] {
+				padding: 4px 7px;
+				font-size: 16px;
+				border: none;	
+			}
+		}
+	}
 }
 
 .aries-body {
@@ -145,6 +158,9 @@ $aries-trending-red: #D35400;
 	padding: 3px 5px;
 	text-transform: uppercase;
 	background-color: $aries-trending-red;
+	a {
+		color: white;
+	}
 	ul {
 		margin: 0px;
 		margin-left: -35px;
@@ -320,29 +336,32 @@ $aries-trending-red: #D35400;
 	width: 150px;
 }
 
-.aries-author-info {
+.aries-listing-info {
 	img {
 		width: 280px;
 		height: 280px;
 	}
-	.aries-author-info-firstname {
+	.aries-listing-info-firstname {
 		margin-top: 20px;
 		font-size: 2em;
 	}
-	.aries-author-info-lastname {
+	.aries-listing-info-lastname {
 		font-weight: 500;
 		margin-top: -15px;
 		font-size: 3.2em;
 	}
+	.aries-listing-title {
+		font-size: 2em;
+	}
 }
 
-.aries-author-stories {
-	.aries-author-story {
+.aries-listing-stories {
+	.aries-listing-story {
 		a {
 			text-decoration: none;
 		}
 		height: 80px;
-		.aries-author-story-image {
+		.aries-listing-story-image {
 			height: 70px;
 			width: 100px;
 			background-position: center center;
@@ -351,7 +370,7 @@ $aries-trending-red: #D35400;
 			display: inline-block;
 		}
 		margin-bottom: 10px;
-		.aries-author-story-title {
+		.aries-listing-story-title {
 			width: 700px;
 			padding-left: 10px;
 			font-size: 1.5em;

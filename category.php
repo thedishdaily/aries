@@ -15,7 +15,10 @@
 				<a href="<?php the_permalink() ?>" rel="bookmark">
 					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 					<div class="aries-listing-story-image" style="background-image: url('<? echo $image[0]; ?>');"></div>
-					<div class="aries-listing-story-title"><?php the_title(); ?></div>
+					<div class="aries-listing-story-metadata">
+						<div class="aries-listing-story-title"><?php the_title(); ?></div>
+						<div class="aries-listing-story-excerpt"><?php the_excerpt(); ?></div>
+					</div>
 				</div>
 				</a>
 				<?php endwhile; else: ?>

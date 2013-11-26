@@ -45,21 +45,30 @@
 				<? } ?>
 			</ul>
 		</div>
-		<div class="aries-secondary-features">
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<div class="aries-secondary-feature">
-				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-				<a href="<?php the_permalink() ?>" rel="bookmark"><div class="aries-secondary-feature-title"><?php the_title(); ?></div></a>
-				<? if ($image[0] == null) { ?>
-					<div class="aries-secondary-feature-image" style="background-image: url('<? bloginfo('template_directory');?>/images/placeholder.png');"></div>
-				<? } else { ?>
-					<div class="aries-secondary-feature-image" style="background-image: url('<? echo $image[0]; ?>');"></div>
-				<? } ?>
-				<div class="aries-secondary-feature-subtitle"><?php the_subtitle(); ?></div>
+		<div class="row">
+			<div class="col-xs-9">
+				<div class="aries-secondary-features">
+					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					<div class="aries-secondary-feature">
+						<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><div class="aries-secondary-feature-title"><?php the_title(); ?></div></a>
+						<? if ($image[0] == null) { ?>
+							<div class="aries-secondary-feature-image" style="background-image: url('<? bloginfo('template_directory');?>/images/placeholder.png');"></div>
+						<? } else { ?>
+							<div class="aries-secondary-feature-image" style="background-image: url('<? echo $image[0]; ?>');"></div>
+						<? } ?>
+						<div class="aries-secondary-feature-subtitle"><?php the_subtitle(); ?></div>
+					</div>
+					<?php endwhile; ?>
+					<? else: ?>
+					<?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
+				</div>
 			</div>
-			<?php endwhile; ?>
-			<? else: ?>
-			<?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
+			<div class="col-xs-3">
+				<div id="aries-sidebar-1">
+				<?php if ( dynamic_sidebar('Home right sidebar') ) : else : endif; ?>
+				</div>
+			</div>
 		</div>
 		<? if (have_posts()) { ?>
 			<div class="aries-secondary-showmore"><a href="#">Show more stories</a></div>
@@ -72,8 +81,8 @@ var container = document.querySelector('.aries-secondary-features');
 console.log(container.offsetWidth);
 var msnry = new Masonry( container, {
   // options
-  columnWidth: (container.offsetWidth - 80) / 4,
-  gutter: 24,
+  columnWidth: (container.offsetWidth - 30) / 3,
+  gutter: 10,
   itemSelector: '.aries-secondary-feature'
 });
 </script>

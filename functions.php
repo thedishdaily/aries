@@ -4,6 +4,35 @@ add_theme_support('post-formats');
 add_theme_support('menus');
 add_filter('show_admin_bar', '__return_false');
 
+function arphabet_widgets_init() {
+    register_sidebar( array(
+        'name' => 'Home right sidebar',
+        'id' => 'aries-sidebar-1',
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<div class="aries-widget-title">',
+        'after_title' => '</div>',
+    ) );
+}
+add_action( 'widgets_init', 'arphabet_widgets_init' );
+
+/**
+ * Retrieves social counts from a variety of social networks
+ * TODO: Extract into a standalone plugin
+ */
+function retrieve_social_counts() {
+
+    // Gets the number of likes for a URL on Facebook
+    $fbUrl = 'https://www.facebook.com/TheDishDaily';
+    $fbJson = file_get_contents('http://graph.facebook.com/?ids=' . $fbUrl);
+    $fbObj = json_decode($fbJson);
+    $fbLikes = $fbObj->$fbUrl->likes;
+
+    // Gets the number of Twitter followers
+
+
+}
+
 function theme_front_page_settings() {
     ?>
 

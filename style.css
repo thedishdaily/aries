@@ -76,6 +76,7 @@ img.aligncenter {
     height: 54px;
     margin-top: 14px; }
     .aries-navbar .aries-navbar-search input[type="text"] {
+      width: 300px;
       padding: 4px 7px;
       font-size: 16px;
       border: none; }
@@ -155,7 +156,7 @@ img.aligncenter {
   .aries-secondary-features .aries-secondary-feature {
     border-bottom: 1px solid #CCC;
     position: absolute;
-    width: 24%;
+    width: 31%;
     margin-bottom: 20px;
     height: 340px; }
     .aries-secondary-features .aries-secondary-feature .aries-secondary-feature-image {
@@ -289,23 +290,44 @@ img.aligncenter {
   font-size: 2em; }
 
 .aries-listing-stories .aries-listing-story {
-  height: 80px;
   margin-bottom: 10px; }
   .aries-listing-stories .aries-listing-story a {
     text-decoration: none; }
   .aries-listing-stories .aries-listing-story .aries-listing-story-image {
-    height: 70px;
-    width: 100px;
+    margin-top: 6px;
+    height: 90px;
+    width: 150px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     display: inline-block; }
-  .aries-listing-stories .aries-listing-story .aries-listing-story-title {
-    width: 700px;
+  .aries-listing-stories .aries-listing-story .aries-listing-story-metadata {
+    width: 650px;
     padding-left: 10px;
-    font-size: 1.5em;
     display: inline-block;
     vertical-align: top; }
+    .aries-listing-stories .aries-listing-story .aries-listing-story-metadata .aries-listing-story-title {
+      font-size: 1.5em; }
+    .aries-listing-stories .aries-listing-story .aries-listing-story-metadata .aries-listing-story-subtitle {
+      font-size: 1.0em; }
+
+#aries-sidebar-1 {
+  margin-top: 15px; }
+
+.aries-widget-title {
+  font-size: 2em;
+  padding: 4px 10px;
+  background-color: #56a6db;
+  color: #f7f7f7;
+  margin-bottom: 10px; }
+
+.gce-list {
+  list-style: none;
+  margin-left: -35px; }
+  .gce-list .gce-feed-1 {
+    margin-bottom: 8px; }
+  .gce-list .aries-index-event-title {
+    font-size: 1.4em; }
 
 footer {
   background-color: #56a6db;

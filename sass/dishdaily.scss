@@ -74,6 +74,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 		margin-top: 14px;
 		input {
 			&[type="text"] {
+				width: 300px;
 				padding: 4px 7px;
 				font-size: 16px;
 				border: none;	
@@ -179,7 +180,7 @@ $aries-trending-red: #D35400;
 	.aries-secondary-feature {
 		border-bottom: 1px solid #CCC;
 		position: absolute;
-		width: 24%;
+		width: 31%;
 		margin-bottom: 20px;
 		height: 340px;
 		.aries-secondary-feature-image {
@@ -360,23 +361,51 @@ $aries-trending-red: #D35400;
 		a {
 			text-decoration: none;
 		}
-		height: 80px;
 		.aries-listing-story-image {
-			height: 70px;
-			width: 100px;
+			margin-top: 6px;
+			height: 90px;
+			width: 150px;
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: cover;
 			display: inline-block;
 		}
 		margin-bottom: 10px;
-		.aries-listing-story-title {
-			width: 700px;
+		.aries-listing-story-metadata {
+			width: 650px;
 			padding-left: 10px;
-			font-size: 1.5em;
 			display: inline-block;
 			vertical-align: top;
+			.aries-listing-story-title {
+				font-size: 1.5em;
+			}
+			.aries-listing-story-subtitle {
+				font-size: 1.0em;
+			}
 		}
+	}
+}
+
+#aries-sidebar-1 {
+	margin-top: 15px;
+}
+
+.aries-widget-title {
+	font-size: 2em;
+	padding: 4px 10px;
+	background-color: $header-background;
+	color: $header-navbar-text;
+	margin-bottom: 10px;
+}
+
+.gce-list {
+	list-style: none;
+	margin-left: -35px;
+	.gce-feed-1 {
+		margin-bottom: 8px;
+	}
+	.aries-index-event-title {
+		font-size: 1.4em;
 	}
 }
 

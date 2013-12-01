@@ -4,7 +4,8 @@
 		<div class="aries-features">
 			<div class="row">
 				<div class="col-xs-8">
-					<? $post = get_post(get_option('main_feature_id')); ?>
+					<? $homepage_options = get_option('home_page_options');
+					$post = get_post($homepage_options['mainfeature']); ?>
 					<a href="<? echo get_permalink($post->ID); ?>">
 					<div class="aries-main">
 						<? echo get_the_post_thumbnail($post->ID); ?>
@@ -16,9 +17,9 @@
 				<div class="col-xs-4">
 					<div class="aries-sidebar">
 						<?
-						$featuredargs = array( 'posts_per_page' => 5, 'order'=> 'DESC', 'orderby' => 'date' );
-						$featuredlist = get_posts( $featuredargs );
-						foreach ($featuredlist as $featured) { ?>
+						foreach ($homepage_options['frontposts'] as $frontpost_id) { 
+						$featured = get_post($frontpost_id);
+						?>
 						<div class="aries-sidebar-item">
 							<a href="<? echo get_permalink($featured->ID); ?>">
 							<div class="aries-sidebar-item-title"><? echo $featured->post_title; ?></div>
@@ -68,10 +69,11 @@
 				<div id="aries-sidebar-1">
 				<?php if ( dynamic_sidebar('Home right sidebar') ) : else : endif; ?>
 				</div>
+				<div class="fb-like-box" data-href="https://www.facebook.com/TheDishDaily" data-height="320" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
 			</div>
 		</div>
 		<? if (have_posts()) { ?>
-			<div class="aries-secondary-showmore"><a href="#">Show more stories</a></div>
+			<div class="aries-secondary-showmore"><?php next_posts_link( 'Older stories' ); ?></div>
 		<? } ?>
 	</div>
 </div>

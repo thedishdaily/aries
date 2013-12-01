@@ -28,6 +28,17 @@ html {
 	font-weight: 300;
 }
 
+html, body {
+	height: 100%;
+}
+
+#wrap {
+	min-height: 100%;
+	height: auto;
+	margin: 0 auto -100px;
+	padding: 0 0 100px;
+}
+
 img.alignright {float:right; margin:0 0 1em 1em; padding: 5px 0px 5px 5px;}
 img.alignleft {float:left; margin:0 1em 1em 0; padding: 5px 5px 5px 0px;}
 img.aligncenter {display: block; margin-left: auto; margin-right: auto}
@@ -67,18 +78,27 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 			}
 		}
 	}
-	.aries-navbar-search {
+	.aries-navbar-right {
 		display: inline-block;
 		float: right;
 		height: 54px;
 		margin-top: 14px;
+		form {
+			display: inline-block;
+		}
 		input {
+			display: inline-block;
 			&[type="text"] {
 				width: 300px;
 				padding: 4px 7px;
 				font-size: 16px;
 				border: none;	
 			}
+		}
+		i {
+			color: $header-navbar-text;
+			font-size: 1.2em;
+			display: inline-block;
 		}
 	}
 }
@@ -182,7 +202,7 @@ $aries-trending-red: #D35400;
 		position: absolute;
 		width: 31%;
 		margin-bottom: 20px;
-		height: 340px;
+		height: 380px;
 		.aries-secondary-feature-image {
 			height: 180px;
 			width: 100%;
@@ -386,8 +406,17 @@ $aries-trending-red: #D35400;
 	}
 }
 
+.aries-footer-social {
+	margin-top: 10px;
+	i {
+		font-size: 1.8em;
+		margin-right: 10px;
+	}
+}
+
 #aries-sidebar-1 {
 	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 .aries-widget-title {

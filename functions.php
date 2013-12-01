@@ -28,11 +28,11 @@ function retrieve_social_counts() {
     $fbObj = json_decode($fbJson);
     $fbLikes = $fbObj->$fbUrl->likes;
 
-    // Gets the number of Twitter followers
-
-
 }
 
+/**
+ * Creates a setting menu for the frong page
+ */
 function theme_front_page_settings() {
     ?>
 
@@ -73,9 +73,6 @@ function setup_theme_admin_menus() {
 
 add_action("admin_menu", "setup_theme_admin_menus");
 
-
-
-
 add_action('admin_menu', 'register_home_page_options');
 
 function register_home_page_options() {
@@ -84,10 +81,10 @@ function register_home_page_options() {
 
 function custom_menu_home_page_options() {
     global $wpdb;
-    if (isset($_POST['frontpost_on_page']) || isset($_POST['frontpost'])) {
+    if (isset($_POST['frontpost'])) {
         $option_value = array(
-            'on_page' => (int) $_POST['frontpost_on_page'],
-            'frontposts' => $_POST['frontpost']
+            'frontposts' => $_POST['frontpost'],
+            'mainfeature' => $_POST['mainfeature']
         );
         if (get_option('home_page_options') !== false) {
             update_option('home_page_options', $option_value);
@@ -107,7 +104,7 @@ function custom_menu_home_page_options() {
         jQuery(document).ready(function($) {
             $('.checkbox-frontpost').click(function() {
                 if(jQuery(".checkbox-frontpost:checked").length > 5){
-                    alert('max 5 posts');
+                    alert('Only five posts can be selected as secondary features');
                     return false;
                 }
             });
@@ -115,12 +112,24 @@ function custom_menu_home_page_options() {
     </script>
     <div class="icon32 icon32-posts-post" id="icon-edit"><br></div>
     <h2>Home page options</h2>
-    <h4>Show posts on home page</h4>
     <form action="" method="POST">
+        <h3>Main Feature</h3>
+        <div class="mainfeature-wrap">
+            <select name="mainfeature">
+            <?php
+            $fivesdrafts = $wpdb->get_results("SELECT * FROM `" . $wpdb->prefix . "posts` WHERE `post_type`='post' AND `post_status`='publish' ORDER BY `post_date` DESC");
+            if ($fivesdrafts) {
+                foreach ($fivesdrafts as $post) {
+                    ?>
+                    <option value="<? echo $post->ID; ?>"<? if ($post->ID == $home_page_options['mainfeature']) echo ' selected'; ?>><? echo $post->post_title; ?></option>
+                <? }
+            } ?>
+            </select>
+        </div>
+        <h3>Secondary Features</h3>
         <div class="frontpost-wrapp">
             <ul>
                 <?php
-                $fivesdrafts = $wpdb->get_results("SELECT * FROM `" . $wpdb->prefix . "posts` WHERE `post_type`='post' AND `post_status`='publish' ORDER BY `post_date` DESC");
                 if ($fivesdrafts) {
                     foreach ($fivesdrafts as $post) {
                         ?>
@@ -138,10 +147,7 @@ function custom_menu_home_page_options() {
                 }
                 ?>
             </ul>
-        </div>
-        <p>
-            <label>Posts on home page: <input type="text" name="frontpost_on_page" value="<?php echo $home_page_options["on_page"]; ?>"> </label>
-        </p>
+        </div>  
         <p>
             <input type="submit" value="Save" class="button button-primary button-large">
         </p>

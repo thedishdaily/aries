@@ -19,6 +19,15 @@ General comments (optional).
 html {
   font-weight: 300; }
 
+html, body {
+  height: 100%; }
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -100px;
+  padding: 0 0 100px; }
+
 img.alignright {
   float: right;
   margin: 0 0 1em 1em;
@@ -70,16 +79,24 @@ img.aligncenter {
           text-decoration: none; }
         .aries-navbar .aries-navbar-items ul li:hover {
           background-color: #5bb4f0; }
-  .aries-navbar .aries-navbar-search {
+  .aries-navbar .aries-navbar-right {
     display: inline-block;
     float: right;
     height: 54px;
     margin-top: 14px; }
-    .aries-navbar .aries-navbar-search input[type="text"] {
-      width: 300px;
-      padding: 4px 7px;
-      font-size: 16px;
-      border: none; }
+    .aries-navbar .aries-navbar-right form {
+      display: inline-block; }
+    .aries-navbar .aries-navbar-right input {
+      display: inline-block; }
+      .aries-navbar .aries-navbar-right input[type="text"] {
+        width: 300px;
+        padding: 4px 7px;
+        font-size: 16px;
+        border: none; }
+    .aries-navbar .aries-navbar-right i {
+      color: #f7f7f7;
+      font-size: 1.2em;
+      display: inline-block; }
 
 .aries-body {
   margin-top: 70px;
@@ -158,7 +175,7 @@ img.aligncenter {
     position: absolute;
     width: 31%;
     margin-bottom: 20px;
-    height: 340px; }
+    height: 380px; }
     .aries-secondary-features .aries-secondary-feature .aries-secondary-feature-image {
       height: 180px;
       width: 100%;
@@ -311,8 +328,15 @@ img.aligncenter {
     .aries-listing-stories .aries-listing-story .aries-listing-story-metadata .aries-listing-story-subtitle {
       font-size: 1.0em; }
 
+.aries-footer-social {
+  margin-top: 10px; }
+  .aries-footer-social i {
+    font-size: 1.8em;
+    margin-right: 10px; }
+
 #aries-sidebar-1 {
-  margin-top: 15px; }
+  margin-top: 15px;
+  margin-bottom: 15px; }
 
 .aries-widget-title {
   font-size: 2em;

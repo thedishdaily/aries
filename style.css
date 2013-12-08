@@ -112,6 +112,9 @@ img.aligncenter {
   background-attachment: fixed; }
 
 .aries-features .aries-main {
+  width: 792px;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 440px; }
   .aries-features .aries-main .aries-main-featured {
     position: absolute;

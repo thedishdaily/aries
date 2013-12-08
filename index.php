@@ -7,8 +7,9 @@
 					<? $homepage_options = get_option('home_page_options');
 					$post = get_post($homepage_options['mainfeature']); ?>
 					<a href="<? echo get_permalink($post->ID); ?>">
-					<div class="aries-main">
-						<? echo get_the_post_thumbnail($post->ID); ?>
+					<? $mainThumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
+					$mainUrl = $mainThumb['0']; ?>
+					<div class="aries-main" style="background-image: url('<? echo $mainUrl; ?>');">
 						<div class="aries-main-featured">FEATURED</div>
 						<div class="aries-main-title"><? echo $post->post_title; ?></div>
 					</div>

@@ -6,7 +6,7 @@
 				<div class="aries-post-authorbar">
 					<div class="aries-post-avatar"><?php echo get_avatar($post->post_author, 110); ?></div>
 					<div class="aries-post-author"><?php the_author_posts_link() ?></div>
-					<div class="aries-post-publishdate"><? the_time('F jS, Y'); ?></div>
+					<div class="aries-post-publishdate"><? the_time('F j, Y'); ?></div>
 				</div>
 			</div>
 			<div class="col-xs-8">

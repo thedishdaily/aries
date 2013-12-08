@@ -121,6 +121,9 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 .aries-features {
 	$aries-features-height: 440px;
 	.aries-main {
+		width: 792px;
+		background-repeat: no-repeat;
+		background-size: cover;
 		.aries-main-featured {
 			position: absolute;
 			top: 0px;

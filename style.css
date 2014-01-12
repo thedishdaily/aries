@@ -193,7 +193,7 @@ img.aligncenter {
       margin-top: 10px;
       font-size: 1.1em; }
     .aries-secondary-features .aries-secondary-feature .aries-secondary-feature-author {
-      padding: 2px 5px; }
+      padding-top: 8px; }
 
 .aries-secondary-showmore {
   width: 200px;
@@ -225,10 +225,11 @@ img.aligncenter {
     margin-bottom: 5px;
     padding-bottom: 10px; }
 .aries-post .aries-post-image {
+  height: 500px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   margin-bottom: 10px; }
-  .aries-post .aries-post-image img {
-    width: 100%;
-    max-height: 500px; }
 .aries-post img {
   display: inline-block;
   /* width: 100%; */ }

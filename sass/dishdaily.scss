@@ -223,7 +223,7 @@ $aries-trending-red: #D35400;
 			font-size: 1.1em;
 		}
 		.aries-secondary-feature-author {
-			padding: 2px 5px;
+			padding-top: 8px;
 		}
 	}
 }
@@ -267,10 +267,10 @@ $aries-trending-red: #D35400;
 		}
 	}
 	.aries-post-image {
-		img {
-			width: 100%;
-			max-height: 500px;
-		}
+		height: 500px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
 		margin-bottom: 10px;
 	}
 	img {
